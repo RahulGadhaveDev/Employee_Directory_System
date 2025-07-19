@@ -81,6 +81,7 @@ public class EmployeeRepo {
 		session.close();
 	}
 	
+	//using unidirection mapping delete Employee
 	public void deleteEmployee() {
 		SessionFactory factory = EmployeeUtility.getfactory();
 		Session session = factory.openSession();
