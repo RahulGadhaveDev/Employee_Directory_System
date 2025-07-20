@@ -15,8 +15,8 @@ public class App {
 		System.out.println("Enter a number ");
 		System.out.println("1. Add a Employee");
 		System.out.println("2. search a Employee");
-		System.out.println("3.update Employee Salry");
-		System.out.println("4. Delete Employee ");
+		System.out.println("3.update Employee ");
+		System.out.println("4. Delete  Employee ");
 
 		Scanner sc = new Scanner(System.in);
 
@@ -29,7 +29,18 @@ public class App {
 			employee.getEmployee();
 			break;
 		case 3:
-			employee.updateSalary();
+			System.out.println("enter which feild update");
+			System.out.println("1.salary");
+			System.out.println("2.adress");
+			int op = sc.nextInt();
+			switch (op) {
+			case 1:
+				employee.updateSalary();
+				break;
+			case 2:
+				employee.updateAdress();
+				break;
+			}
 			break;
 		case 4:
 			employee.deleteEmployee();

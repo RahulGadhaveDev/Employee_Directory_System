@@ -1,7 +1,12 @@
 package com.Entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -9,6 +14,7 @@ import jakarta.persistence.Table;
 public class EmployeeDetail {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int employeeId;
 
 	private String employeeName;
@@ -18,6 +24,10 @@ public class EmployeeDetail {
 	private long employeeSalary;
 
 	private String employeeDepartment;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "adress_id")
+	private Adress adress;
 
 	public int getEmployeeId() {
 		return employeeId;
@@ -59,11 +69,19 @@ public class EmployeeDetail {
 		this.employeeDepartment = employeeDepartment;
 	}
 
+	public Adress getAdress() {
+		return adress;
+	}
+
+	public void setAdress(Adress adress) {
+		this.adress = adress;
+	}
+
 	@Override
 	public String toString() {
 		return "EmployeeDetail [employeeId=" + employeeId + ", employeeName=" + employeeName + ", employeeDesignation="
 				+ employeeDesignation + ", employeeSalary=" + employeeSalary + ", employeeDepartment="
-				+ employeeDepartment + "]";
+				+ employeeDepartment + ", adress=" + adress + "]";
 	}
 
 }
