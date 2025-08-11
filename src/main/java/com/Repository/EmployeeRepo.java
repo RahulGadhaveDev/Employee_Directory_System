@@ -61,7 +61,6 @@ public class EmployeeRepo {
 		session.close();
 	}
 
-	// enter data
 	public void getEmployee() {
 
 		SessionFactory factory = EmployeeUtility.getfactory();
