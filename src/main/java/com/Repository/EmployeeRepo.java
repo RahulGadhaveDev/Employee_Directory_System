@@ -60,7 +60,7 @@ public class EmployeeRepo {
 		transaction.commit();
 		session.close();
 	}
-	
+	//get Employee data 
 	public void getEmployee() {
 
 		SessionFactory factory = EmployeeUtility.getfactory();
