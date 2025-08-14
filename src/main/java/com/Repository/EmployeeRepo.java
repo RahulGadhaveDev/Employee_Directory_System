@@ -78,7 +78,7 @@ public class EmployeeRepo {
 		transaction.commit();
 		session.close();
 	}
-
+//updata data
 	public void updateSalary() {
 		SessionFactory factory = EmployeeUtility.getfactory();
 		Session session = factory.openSession();
